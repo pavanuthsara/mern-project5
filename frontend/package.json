@@ -2,6 +2,7 @@
   "name": "frontend",
   "private": true,
   "version": "0.0.0",
+  "proxy": "http://localhost:3001",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,6 +12,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.15",
+    "axios": "^1.8.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.4.0",

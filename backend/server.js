@@ -8,6 +8,7 @@ import Farmer from './model/farmer.model.js';
 import Product2 from './model/product2.model.js';
 import Buyer from './model/buyer.model.js';
 import Order from './model/order.model.js';
+import cors from 'cors';
 
 dotenv.config();
 
@@ -16,6 +17,11 @@ const app = express();
 app.use(express.json()); //allow to accept json data in the res.body
 
 app.use('/api/products',productRoutes );
+
+app.use(cors({
+    origin: 'http://localhost:5173', // Your Vite frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
+}));
 
 app.get("/best-selling/:farmerId", async (req, res) => {
     try {
